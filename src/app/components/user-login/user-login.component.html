@@ -1,0 +1,38 @@
+<form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+  <h1>Create an account</h1>
+
+  <div
+    [ngClass]="{invalid: loginForm.get('email').touched && loginForm.get('email').invalid}">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email">
+    <div
+      *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"
+      class="validation">
+      <small *ngIf="loginForm.get('email').errors.required">Enter your email</small>
+      <small *ngIf="loginForm.get('email').errors.email">Email isn`t correct.</small>
+    </div>
+  </div>
+
+  <div
+    [ngClass]="{invalid: loginForm.get('password').touched && loginForm.get('password').invalid}">
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password">
+    <div
+      *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"
+      class="validation">
+      <small *ngIf="loginForm.get('password').errors.required">Enter password</small>
+      <small *ngIf="loginForm.get('password').errors.minLength">
+        Password must be at least
+        {{loginForm.get('password').errors.minLength.actualLength}} symbols.
+        Now you entered
+        {{loginForm.get('password').errors.minLength.actualLength}} symbols.
+      </small>
+    </div>
+  </div>
+
+  <button
+  type="submit"
+  class="btn">
+    Create an account
+  </button>
+</form>

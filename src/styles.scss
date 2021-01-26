@@ -1,1 +1,100 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --success-color: #37ab52;
+  --primary-color: #000000;
+  --price-color: #1A6442;
+  --lightTeal: #E3F5EC;
+  --danger: #DC3545;
+  --inactiveElments: #666;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 1rem;
+  background-color: #fff;
+  line-height: 1.5;
+  letter-spacing: 0.21px;
+}
+
+a {
+  color: var(--primary-color);
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover{
+    color: #888;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.validation{
+  color: var(--danger);
+}
+input{
+  display: block;
+  border: 1px solid #666;
+  padding: 0.5rem;
+  width: 90%;
+
+  &:focus{
+    outline: none;
+  }
+  &:focus ~ label,
+  &:valid ~ label{
+    top: -0.2rem;
+    color: var(--inactiveElments);
+  }
+}
+
+label{
+  pointer-events: none;
+  left: 0.2rem;
+  top: 0.3rem;
+  transition: 0.2s ease all;
+}
+
+.btn{
+  background: var(--lightTeal);
+  color: var(--primary-color);
+  padding: .5rem .5rem;
+  font-size: 1.5rem;
+  border: 1px solid black;;
+  border-radius: .3rem;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  padding: 0.5rem 1.5rem;
+  background: var(--lightTeal);
+
+  @media screen and (max-width: 768px) {
+    .navbar{
+      width: 100%;
+      position: fixed;
+
+      ul{
+        float: right;
+      }
+
+      li.active a{
+        color: var(--primary-color);
+      }
+
+      a {
+        color: var(--primary-color);
+        padding: 0.45rem;
+        margin: 0 0.25rem;
+      }
+    }
+  }
+}
+
