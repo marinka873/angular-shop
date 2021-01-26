@@ -40,8 +40,10 @@ ul {
 input{
   display: block;
   border: 1px solid #666;
-  padding: 0.5rem;
+  border-radius: .3rem;
+  padding: .5rem;
   width: 90%;
+  margin-bottom: .3rem;
 
   &:focus{
     outline: none;
@@ -64,9 +66,10 @@ label{
   background: var(--lightTeal);
   color: var(--primary-color);
   padding: .5rem .5rem;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   border: 1px solid black;;
   border-radius: .3rem;
+  text-transform: uppercase;
 }
 .navbar {
   display: flex;
@@ -97,4 +100,3 @@ label{
     }
   }
 }
-
