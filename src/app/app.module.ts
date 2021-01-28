@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserLoginComponent } from './components/user-login/user-login.component';
 
 @NgModule({
@@ -20,7 +20,8 @@ import { UserLoginComponent } from './components/user-login/user-login.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
